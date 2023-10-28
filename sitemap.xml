@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://riverta.info/projects/</loc>
+    <lastmod>2023-10-04T12:54:17+09:00</lastmod>
+  </url><url>
+    <loc>https://riverta.info/posts/</loc>
+    <lastmod>2023-10-04T12:54:04+09:00</lastmod>
+  </url><url>
+    <loc>https://riverta.info/</loc>
+    <lastmod>2023-09-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://riverta.info/series/how-to-make-serias/</loc>
+    <lastmod>2023-09-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://riverta.info/tags/hugo/</loc>
+    <lastmod>2023-09-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://riverta.info/series/</loc>
+    <lastmod>2023-09-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://riverta.info/tags/</loc>
+    <lastmod>2023-09-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://riverta.info/posts/page001/</loc>
+    <lastmod>2023-09-28T00:00:00+00:00</lastmod>
+  </url>
+</urlset>
