@@ -2,10 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://riverta1992.github.io/projects/lenia/</loc>
-    <lastmod>2023-10-04T13:13:46+09:00</lastmod>
+    <loc>https://riverta1992.github.io/tags/hugo/</loc>
+    <lastmod>2023-10-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://riverta1992.github.io/</loc>
+    <lastmod>2023-10-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://riverta1992.github.io/tags/</loc>
+    <lastmod>2023-10-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://riverta1992.github.io/posts/page001/</loc>
+    <lastmod>2023-10-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://riverta1992.github.io/projects/lenia/</loc>
     <lastmod>2023-10-04T13:13:46+09:00</lastmod>
   </url><url>
     <loc>https://riverta1992.github.io/projects/</loc>
@@ -14,19 +23,6 @@
     <loc>https://riverta1992.github.io/posts/</loc>
     <lastmod>2023-10-04T12:54:04+09:00</lastmod>
   </url><url>
-    <loc>https://riverta1992.github.io/series/how-to-make-serias/</loc>
-    <lastmod>2023-09-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://riverta1992.github.io/tags/hugo/</loc>
-    <lastmod>2023-09-28T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://riverta1992.github.io/series/</loc>
-    <lastmod>2023-09-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://riverta1992.github.io/tags/</loc>
-    <lastmod>2023-09-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://riverta1992.github.io/posts/page001/</loc>
-    <lastmod>2023-09-28T00:00:00+00:00</lastmod>
   </url>
 </urlset>
