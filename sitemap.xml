@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://riverta1992.github.io/tags/hugo/</loc>
-    <lastmod>2023-10-28T00:00:00+00:00</lastmod>
+    <loc>https://riverta1992.github.io/tags/go/</loc>
+    <lastmod>2023-11-19T08:38:27+09:00</lastmod>
   </url><url>
     <loc>https://riverta1992.github.io/</loc>
-    <lastmod>2023-10-28T00:00:00+00:00</lastmod>
+    <lastmod>2023-11-19T08:38:27+09:00</lastmod>
+  </url><url>
+    <loc>https://riverta1992.github.io/projects/lenia/part_01/</loc>
+    <lastmod>2023-11-19T08:38:27+09:00</lastmod>
   </url><url>
     <loc>https://riverta1992.github.io/tags/</loc>
+    <lastmod>2023-11-19T08:38:27+09:00</lastmod>
+  </url><url>
+    <loc>https://riverta1992.github.io/tags/hugo/</loc>
     <lastmod>2023-10-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://riverta1992.github.io/posts/page001/</loc>
