@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="1.はじめに # 正規表現ライブラリ TRE をインストールします。公式サイトは https://laurikari.net/tre/ です。 インストールは以下の環境で行います。 $ lsb_release -a No LSB modules are available. Distributor ID: Ubuntu Description: Ubuntu 22.04.3">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="インストール" />
+<meta property="og:description" content="1.はじめに # 正規表現ライブラリ TRE をインストールします。公式サイトは https://laurikari.net/tre/ です。 インストールは以下の環境で行います。 $ lsb_release -a No LSB modules are available. Distributor ID: Ubuntu Description: Ubuntu 22.04.3" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://riverta1992.github.io/docs/re/tre/install/" /><meta property="article:section" content="docs" />
+
+
+<title>インストール | Cynical Experiments Lain</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="stylesheet" href="/book.min.4f0117e74e5337280f18eb9641eae520cb4b25adcf5dd64fafad4664145a5957.css" integrity="sha256-TwEX505TNygPGOuWQerlIMtLJa3PXdZPr61GZBRaWVc=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/ja.search.min.14c5dfbb190d9466d4cc9dc979652688017905f0175ce1a25d8c48d2371cc823.js" integrity="sha256-FMXfuxkNlGbUzJ3JeWUmiAF5BfAXXOGiXYxI0jccyCM=" crossorigin="anonymous"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z6M1FK9PVN"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-Z6M1FK9PVN', { 'anonymize_ip': false });
+}
+</script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Cynical Experiments Lain</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="検索" aria-label="検索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>正規表現</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Tre</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/re/tre/install/" class="active">インストール</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/"  >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>インストール</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1はじめに">1.はじめに</a></li>
+    <li><a href="#2ダウンロード">2.ダウンロード</a></li>
+    <li><a href="#3インストール">3.インストール</a>
+      <ul>
+        <li><a href="#31-autogensh">3.1 autogen.sh</a></li>
+        <li><a href="#32-configure">3.2 configure</a></li>
+        <li><a href="#33-make-check">3.3 make check</a></li>
+        <li><a href="#34-エラー解消">3.4 エラー解消</a></li>
+        <li><a href="#35-make-install">3.5 make install</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-参考-url">4. 参考 URL</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h2 id="1はじめに">
+  1.はじめに
+  <a class="anchor" href="#1%e3%81%af%e3%81%98%e3%82%81%e3%81%ab">#</a>
+</h2>
+<p>正規表現ライブラリ TRE をインストールします。公式サイトは <a href="https://laurikari.net/tre/">https://laurikari.net/tre/</a> です。</p>
+<p>インストールは以下の環境で行います。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$  lsb_release -a
+</span></span><span style="display:flex;"><span>No LSB modules are available.
+</span></span><span style="display:flex;"><span>Distributor ID: Ubuntu
+</span></span><span style="display:flex;"><span>Description:    Ubuntu 22.04.3 LTS
+</span></span><span style="display:flex;"><span>Release:        22.04
+</span></span><span style="display:flex;"><span>Codename:       jammy
+</span></span></code></pre></div><h2 id="2ダウンロード">
+  2.ダウンロード
+  <a class="anchor" href="#2%e3%83%80%e3%82%a6%e3%83%b3%e3%83%ad%e3%83%bc%e3%83%89">#</a>
+</h2>
+<p>git でソースコードをダウンロードします。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ git clone https://github.com/laurikari/tre.git
+</span></span></code></pre></div><h2 id="3インストール">
+  3.インストール
+  <a class="anchor" href="#3%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab">#</a>
+</h2>
+<h3 id="31-autogensh">
+  3.1 autogen.sh
+  <a class="anchor" href="#31-autogensh">#</a>
+</h3>
+<p>TRE は以下のファイルから構成されています。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ cd tre/
+</span></span><span style="display:flex;"><span>$ ls
+</span></span><span style="display:flex;"><span>AUTHORS        NEWS            TODO          doc             po      tre.pc.in    waf
+</span></span><span style="display:flex;"><span>ChangeLog.old  README.md       Tools         lib             python  tre.spec.in  win32
+</span></span><span style="display:flex;"><span>LICENSE        README_waf.txt  configure.ac  local_includes  src     utils        wscript
+</span></span><span style="display:flex;"><span>Makefile.am    THANKS          contrib       m4              tests   vcbuild
+</span></span></code></pre></div><p>autogen.sh を実行します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ ./utils/autogen.sh
+</span></span><span style="display:flex;"><span>Replacing @TRE_VERSION@ by 0.8.0 to python/setup.py
+</span></span><span style="display:flex;"><span>Replacing @TRE_VERSION_1@ by <span style="color:#ae81ff">0</span> to python/setup.py
+</span></span><span style="display:flex;"><span>Replacing @TRE_VERSION_2@ by <span style="color:#ae81ff">8</span> to python/setup.py
+</span></span><span style="display:flex;"><span>Replacing @TRE_VERSION_3@ by <span style="color:#ae81ff">0</span> to python/setup.py
+</span></span><span style="display:flex;"><span>Replacing @TRE_VERSION@ by 0.8.0 to win32/tre-config.h
+</span></span><span style="display:flex;"><span>Replacing @TRE_VERSION_1@ by <span style="color:#ae81ff">0</span> to win32/tre-config.h
+</span></span><span style="display:flex;"><span>Replacing @TRE_VERSION_2@ by <span style="color:#ae81ff">8</span> to win32/tre-config.h
+</span></span><span style="display:flex;"><span>Replacing @TRE_VERSION_3@ by <span style="color:#ae81ff">0</span> to win32/tre-config.h
+</span></span><span style="display:flex;"><span>./utils/autogen.sh: 12: autopoint: not found
+</span></span></code></pre></div><p>autopoint がないと言われたのでインストールします。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ sudo apt-get install autopoint
+</span></span></code></pre></div><p>再度スクリプトを実行します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ ./utils/autogen.sh
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>エラーが消えました。</p>
+<p>改めてファイル一覧を表示します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ ls
+</span></span><span style="display:flex;"><span>ABOUT-NLS      Makefile.in     TODO            configure     local_includes  tests        waf
+</span></span><span style="display:flex;"><span>AUTHORS        NEWS            Tools           configure.ac  m4              tre.pc.in    win32
+</span></span><span style="display:flex;"><span>ChangeLog.old  README.md       aclocal.m4      contrib       po              tre.spec.in  wscript
+</span></span><span style="display:flex;"><span>LICENSE        README_waf.txt  autom4te.cache  doc           python          utils
+</span></span><span style="display:flex;"><span>Makefile.am    THANKS          config.h.in     lib           src             vcbuild
+</span></span></code></pre></div><p>スクリプトを実行したことによって、以下6つのファイルが生成されていることがわかります。</p>
+<ul>
+<li>ABOUT-NLS</li>
+<li>Makefile.in</li>
+<li>aclocal.m4</li>
+<li>auto4te.cache</li>
+<li>config.h.in</li>
+<li>configure</li>
+</ul>
+<h3 id="32-configure">
+  3.2 configure
+  <a class="anchor" href="#32-configure">#</a>
+</h3>
+<p>生成された configure を使います。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ ./configure
+</span></span><span style="display:flex;"><span>checking build system type... x86_64-pc-linux-gnu
+</span></span><span style="display:flex;"><span>checking host system type... x86_64-pc-linux-gnu
+</span></span><span style="display:flex;"><span>checking target system type... x86_64-pc-linux-gnu
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>（省略）
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Configuration summary
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=====================</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>TRE is now configured as follows:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>* Compilation environment
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  CC       <span style="color:#f92672">=</span> gcc
+</span></span><span style="display:flex;"><span>  CFLAGS   <span style="color:#f92672">=</span> -g -O2 -Wall
+</span></span><span style="display:flex;"><span>  CPP      <span style="color:#f92672">=</span> gcc -E
+</span></span><span style="display:flex;"><span>  CPPFLAGS <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>  LD       <span style="color:#f92672">=</span> /usr/bin/ld -m elf_x86_64
+</span></span><span style="display:flex;"><span>  LDFLAGS  <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>  LIBS     <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>  Use alloca<span style="color:#f92672">()</span>:                       yes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>* TRE options
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Development-time debugging:         no
+</span></span><span style="display:flex;"><span>  System regex ABI compatibility:     no
+</span></span><span style="display:flex;"><span>  Wide character <span style="color:#f92672">(</span>wchar_t<span style="color:#f92672">)</span> support:   yes
+</span></span><span style="display:flex;"><span>  Multibyte character set support:    yes
+</span></span><span style="display:flex;"><span>  Approximate matching support:       yes
+</span></span><span style="display:flex;"><span>  Build and install agrep:            yes
+</span></span></code></pre></div><p>以下のとおり、Makefile が生成されました。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ ls
+</span></span><span style="display:flex;"><span>ABOUT-NLS      Makefile.in     Tools           config.status  libtool         stamp-h1     utils
+</span></span><span style="display:flex;"><span>AUTHORS        NEWS            aclocal.m4      configure      local_includes  tests        vcbuild
+</span></span><span style="display:flex;"><span>ChangeLog.old  README.md       autom4te.cache  configure.ac   m4              tre.pc       waf
+</span></span><span style="display:flex;"><span>LICENSE        README_waf.txt  config.h        contrib        po              tre.pc.in    win32
+</span></span><span style="display:flex;"><span>Makefile       THANKS          config.h.in     doc            python          tre.spec     wscript
+</span></span><span style="display:flex;"><span>Makefile.am    TODO            config.log      lib            src             tre.spec.in
+</span></span></code></pre></div><h3 id="33-make-check">
+  3.3 make check
+  <a class="anchor" href="#33-make-check">#</a>
+</h3>
+<p>インストールする前にテストを通します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ make check
+</span></span><span style="display:flex;"><span>Making check in local_includes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>（省略）
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>PASS: test-str-source
+</span></span><span style="display:flex;"><span>PASS: retest
+</span></span><span style="display:flex;"><span>FAIL: wretest
+</span></span><span style="display:flex;"><span><span style="color:#f92672">============================================================================</span>
+</span></span><span style="display:flex;"><span>Testsuite summary <span style="color:#66d9ef">for</span> TRE 0.8.0
+</span></span><span style="display:flex;"><span><span style="color:#f92672">============================================================================</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># TOTAL: 3</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># PASS:  2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># SKIP:  0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># XFAIL: 0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># FAIL:  1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># XPASS: 0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ERROR: 0</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">============================================================================</span>
+</span></span><span style="display:flex;"><span>See tests/test-suite.log
+</span></span><span style="display:flex;"><span><span style="color:#f92672">============================================================================</span>
+</span></span><span style="display:flex;"><span>（省略）
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="34-エラー解消">
+  3.4 エラー解消
+  <a class="anchor" href="#34-%e3%82%a8%e3%83%a9%e3%83%bc%e8%a7%a3%e6%b6%88">#</a>
+</h3>
+<p>README.md の記載によれば、下記のツールが必須となります。</p>
+<ul>
+<li>autoconf</li>
+<li>automake</li>
+<li>gettext</li>
+<li>libtool</li>
+</ul>
+<p>筆者の環境では libtool を入れていなかったのでインストールします。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ libtool
+</span></span><span style="display:flex;"><span>Command <span style="color:#e6db74">&#39;libtool&#39;</span> not found, but can be installed with:
+</span></span><span style="display:flex;"><span>sudo apt install libtool-bin
+</span></span><span style="display:flex;"><span>$ sudo apt-get install libtool-bin
+</span></span></code></pre></div><p>make からやり直します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ make clean
+</span></span><span style="display:flex;"><span>$ make
+</span></span></code></pre></div><p>再度テストします。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ make check
+</span></span><span style="display:flex;"><span>（省略）
+</span></span><span style="display:flex;"><span>PASS: test-str-source
+</span></span><span style="display:flex;"><span>PASS: retest
+</span></span><span style="display:flex;"><span>FAIL: wretest
+</span></span><span style="display:flex;"><span>（省略）
+</span></span></code></pre></div><p>wretest で何らかのエラーが生じているようです。ログを確認します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ cat tests/test-suite.log
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=====================================</span>
+</span></span><span style="display:flex;"><span>   TRE 0.8.0: tests/test-suite.log
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=====================================</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># TOTAL: 3</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># PASS:  2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># SKIP:  0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># XFAIL: 0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># FAIL:  1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># XPASS: 0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ERROR: 0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.. contents:: :depth: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>FAIL: wretest
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=============</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Could not set locale en_US.ISO-8859-1.  Expect some
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">`</span>Invalid or incomplete multi-byte sequence<span style="color:#960050;background-color:#1e0010">&#39;</span> errors.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>（省略）
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>TRE_MULTIBYTE enabled, but skipping LC_CTYPE ja_JP.eucJP <span style="color:#f92672">(</span>locale unavailable<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span> <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> + 2<span style="color:#f92672">)</span> out of <span style="color:#ae81ff">49851</span> tests FAILED!
+</span></span><span style="display:flex;"><span>No memory leaks.
+</span></span><span style="display:flex;"><span>Peak memory consumption <span style="color:#ae81ff">203272</span> bytes <span style="color:#f92672">(</span>198.5 kB, 0.2 MB<span style="color:#f92672">)</span> in <span style="color:#ae81ff">278</span> blocks <span style="color:#f92672">(</span>average <span style="color:#ae81ff">731</span> bytes per block<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>FAIL wretest <span style="color:#f92672">(</span>exit status: 1<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>en_US.ISO-8859-1 を設定できないことでエラーが生じています。locale について確認します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ locale -a
+</span></span><span style="display:flex;"><span>C
+</span></span><span style="display:flex;"><span>C.utf8
+</span></span><span style="display:flex;"><span>POSIX
+</span></span><span style="display:flex;"><span>en_US.utf8
+</span></span><span style="display:flex;"><span>ja_JP.utf8
+</span></span></code></pre></div><p>確かにこの中に en_US.ISO-8859-1 はありません。</p>
+<p>面倒なので一括でインストールします。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ sudo apt-get install locales-all
+</span></span></code></pre></div><p>エラーの原因は解消したので、改めてテストします。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ make check
+</span></span><span style="display:flex;"><span>Making check in local_includes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>（省略）
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>PASS: test-str-source
+</span></span><span style="display:flex;"><span>PASS: retest
+</span></span><span style="display:flex;"><span>PASS: wretest
+</span></span><span style="display:flex;"><span><span style="color:#f92672">============================================================================</span>
+</span></span><span style="display:flex;"><span>Testsuite summary <span style="color:#66d9ef">for</span> TRE 0.8.0
+</span></span><span style="display:flex;"><span><span style="color:#f92672">============================================================================</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># TOTAL: 3</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># PASS:  3</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># SKIP:  0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># XFAIL: 0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># FAIL:  0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># XPASS: 0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ERROR: 0</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">============================================================================</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>（省略）
+</span></span></code></pre></div><p>テストが通りました。</p>
+<h3 id="35-make-install">
+  3.5 make install
+  <a class="anchor" href="#35-make-install">#</a>
+</h3>
+<p>最後にインストールを行います。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ sudo make install
+</span></span></code></pre></div><p>インストール後、以下のディレクトリ配下に TRE 関連のファイルが確認できます。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ ls /usr/local/include/tre/
+</span></span><span style="display:flex;"><span>regex.h  tre-config.h  tre.h
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ ls /usr/local/lib/libtre*
+</span></span><span style="display:flex;"><span>/usr/local/lib/libtre.la  /usr/local/lib/libtre.so.5
+</span></span><span style="display:flex;"><span>/usr/local/lib/libtre.so  /usr/local/lib/libtre.so.5.0.0
+</span></span></code></pre></div><p>以上で TRE のインストールが完了しました。</p>
+<h2 id="4-参考-url">
+  4. 参考 URL
+  <a class="anchor" href="#4-%e5%8f%82%e8%80%83-url">#</a>
+</h2>
+<ul>
+<li><a href="https://laurikari.net/tre/">https://laurikari.net/tre/</a></li>
+<li><a href="https://github.com/laurikari/tre">https://github.com/laurikari/tre</a></li>
+<li><a href="https://ducktape.blot.im/tre-a-regex-engine-with-approximate-matching">https://ducktape.blot.im/tre-a-regex-engine-with-approximate-matching</a></li>
+<li><a href="https://en.wikipedia.org/wiki/TRE_%28computing%29">https://en.wikipedia.org/wiki/TRE_(computing)</a></li>
+<li><a href="https://askubuntu.com/questions/469325/what-is-autopoint">https://askubuntu.com/questions/469325/what-is-autopoint</a></li>
+<li><a href="https://lists.debian.org/debian-lts/2016/10/msg00178.html">https://lists.debian.org/debian-lts/2016/10/msg00178.html</a></li>
+<li><a href="https://qiita.com/valzer0/items/d7166a27c156b0699655">https://qiita.com/valzer0/items/d7166a27c156b0699655</a></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1はじめに">1.はじめに</a></li>
+    <li><a href="#2ダウンロード">2.ダウンロード</a></li>
+    <li><a href="#3インストール">3.インストール</a>
+      <ul>
+        <li><a href="#31-autogensh">3.1 autogen.sh</a></li>
+        <li><a href="#32-configure">3.2 configure</a></li>
+        <li><a href="#33-make-check">3.3 make check</a></li>
+        <li><a href="#34-エラー解消">3.4 エラー解消</a></li>
+        <li><a href="#35-make-install">3.5 make install</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-参考-url">4. 参考 URL</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

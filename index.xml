@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction on Cynical Experiments Lain</title>
+    <link>https://riverta1992.github.io/</link>
+    <description>Recent content in Introduction on Cynical Experiments Lain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language><atom:link href="https://riverta1992.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>インストール</title>
+      <link>https://riverta1992.github.io/docs/re/tre/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://riverta1992.github.io/docs/re/tre/install/</guid>
+      <description>1.はじめに # 正規表現ライブラリ TRE をインストールします。公式サイトは https://laurikari.net/tre/ です。 インストールは以下の環境で行います。 $ lsb_release -a No LSB modules are available. Distributor ID: Ubuntu Description: Ubuntu 22.04.3</description>
+    </item>
+    
+  </channel>
+</rss>
